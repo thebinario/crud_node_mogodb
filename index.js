@@ -1,4 +1,9 @@
+const PORT = 3000;
+const HOST = '0.0.0.0';
+
 //datbase
+
+
 const mongoose = require('mongoose');
 
 const ProjectSchema = new mongoose.Schema({
@@ -52,14 +57,20 @@ const server = express();
 server
   .use(adminBroOptions.options.rootPath, router)
 
-//Run app
+server.get('/', (req, res) => {
+  res.send('Hello World co');
+})
+
+server.listen(PORT, HOST)
+
+/* //Run app
 const run = async () => {
   await mongoose.connect("mongodb://localhost/adminbroapp", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  server.listen(5500, () => { console.log("Server started") });
+  server.listen(3000, () => { console.log("Server started") });
 
 }
 
-run();
+run(); */

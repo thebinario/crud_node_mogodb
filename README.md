@@ -11,3 +11,13 @@ dependecies application
 ```sh
 npm i @admin-bro/mongoose mongoose
 ```
+
+how to build docker
+```sh
+docker build -t painel/dockernode .
+```
+
+how to start docker
+```
+docker run -p 3000:3000 -d painel/dockernode
+```
